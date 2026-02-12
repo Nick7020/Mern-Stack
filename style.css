@@ -119,6 +119,7 @@ section::-webkit-scrollbar{
     align-items: center;
     gap: 15px;
     justify-content: center;
+    cursor: pointer;
 }
 .right h4{
     cursor: pointer;
@@ -128,4 +129,13 @@ section::-webkit-scrollbar{
 }
 .love1{
     color: white;
+}
+.like{
+
+}
+.right>div h4{
+    pointer-events: none;
+}
+.right>div h6{
+    pointer-events: none;
 }
