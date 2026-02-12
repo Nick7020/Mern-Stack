@@ -123,7 +123,7 @@ reels.forEach(function(elem,idx){
                         <div class="user">
                             <img src="${elem.userProfile}" alt="">
                             <h4>${elem.username}</h4>
-                            <button>${elem.isFollowed?'Unfollow':'Follow'}</button>
+                            <button id=${idx} class="follow>${elem.isFollowed?'Unfollow':'Follow'}</button>
                         </div>
                         <h3>${elem.caption}</h3>
                     </div>
@@ -154,6 +154,15 @@ allreels.innerHTML=sum
 addData()
 
 allreels.addEventListener('click',function(event){
-  console.log(reels[event.target.id]);
+  
+  if(reels[event.target.id].isLike==true){
+    console.log(reels[event.target.id].likeCount--);
+    reels[event.target.id].isLike=false;
+  }
+  else{
+    console.log(reels[event.target.id].likeCount++);
+    reels[event.target.id].isLike=true;
+  }
+  addData()
 })
 
